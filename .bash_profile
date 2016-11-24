@@ -1,3 +1,6 @@
+# PATH
+PATH="$HOME/bin:$PATH"
+
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
