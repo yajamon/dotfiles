@@ -1,12 +1,15 @@
-# PATH
+# User commands
 PATH="$HOME/bin:$PATH"
 
 # anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
+PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
 # ls
 export LSCOLORS='gxfxcxdxbxegedabagacad'
+
+# export
+export PATH
 
 # load bash_completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
