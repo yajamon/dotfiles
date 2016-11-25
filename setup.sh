@@ -11,8 +11,9 @@ do
     [[ $file == .gitignore ]] && continue
 
     if [ -L $HOME/$file ] ; then
-        [ "$(readlink $HOME/$file)" = "$DOT_PATH/$file" ] && echo "exists link: $HOME/$file" && continue
-        [ "$(readlink $HOME/$file)" != "$DOT_PATH/$file" ] && echo "exists link: $HOME/$file" && echo "but, look different location: $(readlink $HOME/$file)" && continue
+        [ "$(readlink $HOME/$file)" = "$DOT_PATH/$file" ] && echo "exists link: $HOME/$file"
+        [ "$(readlink $HOME/$file)" != "$DOT_PATH/$file" ] && echo "exists link: $HOME/$file" && echo "but, look different location: $(readlink $HOME/$file)"
+        continue
     fi
     [ -e $HOME/$file ] && echo "exists file: $HOME/$file" && continue
 
