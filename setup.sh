@@ -1,7 +1,7 @@
 #!/bin/bash
 
-
-DOT_FILES=($HOME/dotfiles/.??* bin)
+DOT_PATH=$(cd $(dirname $0) && pwd)
+DOT_FILES=($DOT_PATH/.??* bin)
 
 for file in ${DOT_FILES[@]}
 do
@@ -10,5 +10,5 @@ do
     [[ $file == .git ]] && continue
     [[ $file == .gitignore ]] && continue
 
-    ln -s $HOME/dotfiles/$file $HOME/$file
+    ln -s $DOT_PATH/$file $HOME/$file
 done
