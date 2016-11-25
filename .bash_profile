@@ -1,6 +1,3 @@
-# User commands
-PATH="$HOME/bin:$PATH"
-
 # anyenv
 if [ -d $HOME/.anyenv/bin ]; then
     PATH="$HOME/.anyenv/bin:$PATH"
@@ -11,6 +8,9 @@ fi
 
 # ls
 export LSCOLORS='gxfxcxdxbxegedabagacad'
+
+# User commands
+PATH="$HOME/bin:$PATH"
 
 # export
 export PATH
