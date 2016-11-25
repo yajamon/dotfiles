@@ -2,8 +2,12 @@
 PATH="$HOME/bin:$PATH"
 
 # anyenv
-PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
+if [ -d $HOME/.anyenv/bin ]; then
+    PATH="$HOME/.anyenv/bin:$PATH"
+fi
+if type -a anyenv; then
+    eval "$(anyenv init -)"
+fi
 
 # ls
 export LSCOLORS='gxfxcxdxbxegedabagacad'
