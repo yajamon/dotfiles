@@ -12,5 +12,5 @@ do
 
     [ -e $HOME/$file ] && continue
 
-    ln -s $DOT_PATH/$file $HOME/$file
+    ln -sv $DOT_PATH/$file $HOME/$file
 done
