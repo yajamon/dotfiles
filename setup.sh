@@ -10,5 +10,7 @@ do
     [[ $file == .git ]] && continue
     [[ $file == .gitignore ]] && continue
 
+    [ -e $HOME/$file ] && continue
+
     ln -s $DOT_PATH/$file $HOME/$file
 done
