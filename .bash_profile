@@ -2,7 +2,7 @@
 if [ -d $HOME/.anyenv/bin ]; then
     PATH="$HOME/.anyenv/bin:$PATH"
 fi
-if type -a anyenv; then
+if type -a anyenv 1>/dev/null ; then
     eval "$(anyenv init -)"
 fi
 
