@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOT_PATH=$(cd $(dirname $0) && pwd)
+DOT_PATH=$HOME/dotfiles
 DOT_FILES=($DOT_PATH/.??* bin)
 
 for file in ${DOT_FILES[@]}
