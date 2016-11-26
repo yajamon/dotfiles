@@ -22,3 +22,6 @@ setopt share_history    # share command history data
 alias vi="vim"
 alias ls="ls -G"
 alias ll="ls -lh"
+
+alias du="du -h"
+alias df="df -h"
