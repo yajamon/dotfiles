@@ -18,7 +18,7 @@ do
         } 1>&2
         continue
     fi
-    [ -e $HOME/$file ] && echo "exists file: $HOME/$file" && continue
+    [ -e $HOME/$file ] && echo "exists file: $HOME/$file" 1>&2 && continue
 
     ln -sv $DOT_PATH/$file $HOME/$file
 done
