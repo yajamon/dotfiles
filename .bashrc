@@ -26,6 +26,12 @@ is_osx() {
 alias ls='ls -G'
 alias ll='ls -lh'
 
+# chrome
+if is_osx ; then
+    alias google-chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+    alias google-chrome-debug='google-chrome --remote-debugging-port=9222'
+fi
+
 # profile
 alias showMyProfile='cat ~/.bash_profile ~/.bashrc'
 GIT_PS1_SHOWDIRTYSTATE=true
