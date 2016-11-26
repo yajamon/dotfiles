@@ -34,8 +34,12 @@ fi
 
 # profile
 alias showMyProfile='cat ~/.bash_profile ~/.bashrc'
-GIT_PS1_SHOWDIRTYSTATE=true
-# PS1='\u@\h \W$(__git_ps1 "[\[\033[32m\]%s\[\033[0m\]]")\$ '
-PS1='\u@\h:\[\033[36m\]\W\[\033[31m\]$(__git_ps1 [%s])\[\033[00m\]\$ '
+PS1='\u@\h:\[\033[36m\]\W'
+if type -a __git_ps1 2>/dev/null ; then
+    GIT_PS1_SHOWDIRTYSTATE=true
+    # PS1='\u@\h \W$(__git_ps1 "[\[\033[32m\]%s\[\033[0m\]]")\$ '
+    PS1="${PS1}\[\033[31m\]$(__git_ps1 [%s])"
+fi
+PS1="${PS1}\[\033[00m\]\$ "
 
 echo "load complete bashrc"
