@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOT_PATH=$(cd $(dirname $0) && pwd)
+DOT_PATH=$HOME/dotfiles
 DOT_FILES=($DOT_PATH/.??* bin)
 
 for file in ${DOT_FILES[@]}
@@ -18,7 +18,7 @@ do
         } 1>&2
         continue
     fi
-    [ -e $HOME/$file ] && echo "exists file: $HOME/$file" && continue
+    [ -e $HOME/$file ] && echo "exists file: $HOME/$file" 1>&2 && continue
 
     ln -sv $DOT_PATH/$file $HOME/$file
 done

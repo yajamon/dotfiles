@@ -1,3 +1,7 @@
+
+# less config
+export LESS='-i -M -R'
+
 # anyenv
 if [ -d $HOME/.anyenv/bin ]; then
     PATH="$HOME/.anyenv/bin:$PATH"
