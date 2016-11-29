@@ -19,6 +19,7 @@ setopt hist_ignore_all_dups # ignore duplication command history list. remove ol
 setopt share_history    # share command history data
 
 # aliases
+setopt complete_aliases # aliased ls needs if file/dir completions work
 alias vi="vim"
 alias ls="ls -G"
 alias ll="ls -lh"
