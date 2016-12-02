@@ -1,4 +1,5 @@
 export LANG=ja_JP.UTF-8
+PATH="/usr/local/bin:$PATH"
 
 # ls
 export LSCOLORS='gxfxcxdxbxegedabagacad'
