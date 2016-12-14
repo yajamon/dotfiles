@@ -1,5 +1,5 @@
 
-# Created by https://www.gitignore.io/api/osx,windows,linux
+# Created by https://www.gitignore.io/api/osx,windows,linux,vim
 
 ### OSX ###
 *.DS_Store
@@ -61,3 +61,15 @@ $RECYCLE.BIN/
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
+
+
+### Vim ###
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+# session
+Session.vim
+# temporary
+.netrwhist
+# auto-generated tag files
+tags
