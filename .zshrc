@@ -17,6 +17,9 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
+# keybind support
+setopt IGNOREEOF
+
 # cd support
 setopt auto_cd      # auto change directory
 setopt auto_pushd   # auto directory pushd that you can get dirs list by cd -[tab]
