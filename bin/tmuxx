@@ -1,0 +1,9 @@
+#!/bin/bash
+
+. "$DOTPATH"/etc/lib/util.sh
+
+
+if  has "tmux"; then
+    echo "tmux not found" 1>&2
+    exit 1
+fi
