@@ -37,3 +37,6 @@ alias ll="ls -lh"
 
 alias du="du -h"
 alias df="df -h"
+
+$DOTPATH/bin/tmuxx
+
