@@ -22,5 +22,5 @@ export PATH
 
 # java
 if [ -e /usr/libexec/java_home ] ; then
-    export JAVA_HOME=$(/usrllibexec/java_home -v 1.8)
+    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 fi
