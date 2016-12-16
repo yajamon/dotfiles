@@ -19,3 +19,8 @@ fi
 
 PATH="$HOME/bin:$PATH"
 export PATH
+
+# java
+if [ -e /usr/libexec/java_home ] ; then
+    export JAVA_HOME=$(/usrllibexec/java_home -v 1.8)
+fi
