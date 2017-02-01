@@ -45,3 +45,6 @@ alias dirs="dirs -v"
 
 $DOTPATH/bin/tmuxx
 
+
+# added by travis gem
+[ -f /Users/t-kasamatsu/.travis/travis.sh ] && source /Users/t-kasamatsu/.travis/travis.sh
