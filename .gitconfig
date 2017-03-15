@@ -20,3 +20,5 @@
 
 [commit]
 	template = ~/.stCommitMsg
+[pull]
+	ff = only
