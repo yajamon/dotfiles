@@ -43,3 +43,6 @@ fi
 PS1="${PS1}\[\033[00m\]\$ "
 
 echo "load complete bashrc"
+
+# added by travis gem
+[ -f /Users/t-kasamatsu/.travis/travis.sh ] && source /Users/t-kasamatsu/.travis/travis.sh
