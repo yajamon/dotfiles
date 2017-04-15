@@ -1,3 +1,8 @@
+#dotfile path
+if [[ -z $DOTPATH ]]; then
+    export DOTPATH="$HOME/dotfiles"
+fi
+. "$DOTPATH"/etc/lib/util.sh
 
 # less config
 export LESS='-i -M -R'
