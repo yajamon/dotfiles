@@ -25,9 +25,13 @@ PATH="$HOME/bin:$PATH"
 export PATH
 
 # load bash_completion
-if type -a brew 1>/dev/null 2>&1 ; then
+if is_osx ; then
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         . $(brew --prefix)/etc/bash_completion
+    fi
+else
+    if [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
     fi
 fi
 
