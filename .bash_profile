@@ -20,8 +20,10 @@ PATH="$HOME/bin:$PATH"
 export PATH
 
 # load bash_completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if type -a anyenv 1>/dev/null ; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
 fi
 
 # load .bashrc
