@@ -20,7 +20,7 @@ PATH="$HOME/bin:$PATH"
 export PATH
 
 # load bash_completion
-if type -a brew 1>/dev/null ; then
+if type -a brew 1>/dev/null 2>&1 ; then
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         . $(brew --prefix)/etc/bash_completion
     fi
