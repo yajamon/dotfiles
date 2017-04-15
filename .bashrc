@@ -23,8 +23,13 @@ is_osx() {
 }
 
 # ls
-alias ls='ls -G'
-alias ll='ls -lh'
+if is_osx ; then
+    alias ls='ls -G'
+    alias ll='ls -lh'
+else
+    alias ls='ls --color=auto'
+    alias ll='ls -lh'
+fi
 
 # chrome
 if is_osx ; then
