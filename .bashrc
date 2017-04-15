@@ -45,7 +45,7 @@ fi
 # profile
 alias showMyProfile='cat ~/.bash_profile ~/.bashrc'
 PS1='\u@\h:\[\033[36m\]\W'
-if type -a __git_ps1 2>/dev/null ; then
+if type -a __git_ps1 1>/dev/null 2>&1 ; then
     GIT_PS1_SHOWDIRTYSTATE=true
     # PS1='\u@\h \W$(__git_ps1 "[\[\033[32m\]%s\[\033[0m\]]")\$ '
     PS1="${PS1}\[\033[31m\]$(__git_ps1 [%s])"
