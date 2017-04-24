@@ -1,4 +1,4 @@
-echo "load start bashrc"
+echo "load start bashrc" >&2
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -30,7 +30,7 @@ if type -a __git_ps1 1>/dev/null 2>&1 ; then
 fi
 PS1="${PS1}\[\033[00m\]\$ "
 
-echo "load complete bashrc"
+echo "load complete bashrc" >&2
 
 # added by travis gem
 [ -f /Users/t-kasamatsu/.travis/travis.sh ] && source /Users/t-kasamatsu/.travis/travis.sh
