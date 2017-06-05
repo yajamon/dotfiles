@@ -17,6 +17,10 @@ if type -a anyenv 1>/dev/null ; then
     eval "$(anyenv init -)"
 fi
 
+if [ -f $HOME/.local/export_path.sh ]; then
+    . $HOME/.local/export_path.sh
+fi
+
 PATH="$HOME/bin:$PATH"
 export PATH
 
