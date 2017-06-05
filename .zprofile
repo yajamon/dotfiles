@@ -1,3 +1,7 @@
+if [[ -n $TMUX ]]; then
+    return 0
+fi
+
 # dotfilesへのパスを定義
 if [[ -z $DOTPATH ]]; then
     export DOTPATH="$HOME/dotfiles"
