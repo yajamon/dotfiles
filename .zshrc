@@ -43,6 +43,9 @@ alias df="df -h"
 
 alias dirs="dirs -v"
 
+# setup script
+source $DOTPATH/etc/enable_anyenv_completion.sh
+
 $DOTPATH/bin/tmuxx
 
 
