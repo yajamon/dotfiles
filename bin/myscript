@@ -1,0 +1,21 @@
+#!/bin/bash
+
+SCRIPT_ROOT=$HOME/scripts
+
+if [ -z $1 ]; then
+    echo "Please script name." >&2
+    exit 1;
+fi
+name=$(basename $1)
+script=$SCRIPT_ROOT/$name
+
+if [ ! -f $script ]; then
+    echo "Script ${name} is not found." >&2
+    exit 2;
+fi
+if [ ! -x $script ]; then
+    echo "Script ${script} is not executable." >&2
+    exit 3;
+fi
+
+$script ${@:2}
