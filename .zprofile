@@ -10,6 +10,11 @@ fi
 export LANG=ja_JP.UTF-8
 PATH="/usr/local/bin:$PATH"
 
+
+# 自作の補完関数群
+export FPATH="${HOME}/functions:$FPATH"
+
+
 # ls
 export LSCOLORS='gxfxcxdxbxegedabagacad'
 
