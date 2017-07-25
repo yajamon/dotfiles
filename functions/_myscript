@@ -1,0 +1,7 @@
+#compdef myscript
+
+SCRIPT_ROOT=$HOME/scripts/
+
+_myscript() {
+  _values 'scripts' $(cd $SCRIPT_ROOT && ls)
+}
