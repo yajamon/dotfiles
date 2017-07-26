@@ -30,6 +30,11 @@ if [ -f $HOME/.local/export_path.sh ]; then
     . $HOME/.local/export_path.sh
 fi
 
+# Rust
+if [ -d $HOME/.cargo/bin ]; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 PATH="$HOME/bin:$PATH"
 export PATH
 
