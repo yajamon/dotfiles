@@ -22,3 +22,10 @@ autocmd BufWritePre * :%s/\s\+$//ge
 
 "  Vimで行末の余分なスペースを取り除く - Qiita
 "  http://qiita.com/mktakuya/items/2a6cd35ca0c1b217e28c
+
+" Indentation
+set autoindent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+"  http://d.hatena.ne.jp/nzm_o/20100515/1273911397
