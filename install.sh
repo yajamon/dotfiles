@@ -5,7 +5,7 @@ DOT_PATH=$HOME/dotfiles
 
 if ! type -a git; then
     if type -a yum; then
-        yum install -y git
+        sudo yum install -y git
     fi
 fi
 
