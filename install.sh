@@ -14,7 +14,7 @@ $DOT_PATH/setup.sh
 
 source $DOT_PATH/etc/lib/util.sh
 if is_osx; then
-    $DOT_PATH/etc/init/osx.sh
+    bash $DOT_PATH/etc/init/osx.sh
 else
-    $DOT_PATH/etc/init/linux.sh
+    bash $DOT_PATH/etc/init/linux.sh
 fi
