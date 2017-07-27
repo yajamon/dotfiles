@@ -1,8 +1,10 @@
 sudo yum update -y
 sudo yum groupinstall -y "Development Tools"
 
+CENTOS_MAJOR=$(cat /etc/redhat-release | sed -E "s/.*release[^0-9]*([0-9]*).*/\1/")
+
 sudo yum install -y centos-release-scl
-sudo yum-config-manager --enable rhel-server-rhscl-7-rpms
+sudo yum-config-manager --enable rhel-server-rhscl-${CENTOS_MAJOR}-rpms
 
 sudo yum install -y devtoolset-6
 
