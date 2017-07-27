@@ -27,3 +27,5 @@
 	ff = only
 [push]
 	default = simple
+[color]
+	ui = true
