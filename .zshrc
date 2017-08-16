@@ -46,6 +46,8 @@ alias df="df -h"
 
 alias dirs="dirs -v"
 
+test type -a tree >/dev/null && alias tree="tree -A"
+
 # setup script
 source $DOTPATH/etc/enable_anyenv_completion.sh
 
