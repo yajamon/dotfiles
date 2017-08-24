@@ -1,0 +1,13 @@
+#!/bin/bash
+
+result=""
+for c in $(echo -n $1 | fold -c -w 1)
+do
+    if [[ $c =~ [a-zA-Z0-9_.-] ]]; then
+        result=$result$c
+        continue
+    fi
+    result=$result%$(echo -n $c | hexdump -e '"%X"')
+done
+
+echo $result
