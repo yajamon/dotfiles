@@ -35,10 +35,17 @@ if [ -d $HOME/.cargo/bin ]; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-PATH="$HOME/bin:$PATH"
-export PATH
-
 # java
 if [ -e /usr/libexec/java_home ]; then
     export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 fi
+
+# go
+if [ -e /usr/local/go ]; then
+    PATH="$PATH:/usr/local/go/bin"
+    export GOPATH="$HOME/.go"
+fi
+
+PATH="$HOME/bin:$PATH"
+export PATH
+
