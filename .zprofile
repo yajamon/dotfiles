@@ -42,8 +42,10 @@ fi
 
 # go
 if [ -e /usr/local/go ]; then
-    PATH="$PATH:/usr/local/go/bin"
+    export GOROOT="/usr/local/go"
     export GOPATH="$HOME/.go"
+    export GHQ_ROOT=$GOPATH
+    PATH="$PATH:$GOPATH/bin:/$GOROOT/bin"
 fi
 
 PATH="$HOME/bin:$PATH"
