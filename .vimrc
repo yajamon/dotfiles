@@ -30,6 +30,10 @@ set tabstop=4
 set shiftwidth=4
 "  http://d.hatena.ne.jp/nzm_o/20100515/1273911397
 
+"  Vimメモ : 挿入モードでバックスペースが効かない - もた日記
+"  http://wonderwall.hatenablog.com/entry/2016/03/23/232634
+set backspace=indent,eol,start
+
 "dein Scripts-----------------------------
 if &compatible
     set nocompatible               " Be iMproved
