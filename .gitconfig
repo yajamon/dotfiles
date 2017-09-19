@@ -1,6 +1,7 @@
 [include]
 	path = ~/.local/.gitconfig
 [core]
+	editor = vim
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	safecrlf = true

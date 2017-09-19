@@ -12,6 +12,7 @@ PATH="/usr/local/bin:$PATH"
 
 
 # 自作の補完関数群
+export FPATH="/usr/local/share/zsh-completions:$FPATH"
 export FPATH="${HOME}/functions:$FPATH"
 
 
