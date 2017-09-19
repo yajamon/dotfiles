@@ -1,3 +1,5 @@
+echo "load .zshrc" >&2
+
 # libs
 source $DOTPATH/etc/lib/util.sh
 
