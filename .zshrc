@@ -40,7 +40,11 @@ setopt share_history    # share command history data
 # aliases
 setopt complete_aliases # aliased ls needs if file/dir completions work
 alias vi="vim"
-( is_osx && alias ls="ls -G" ) || alias ls="ls --color"
+if is_osx; then
+    alias ls="ls -G"
+else
+    alias ls="ls --color"
+fi
 alias ll="ls -lh"
 
 alias du="du -h"
