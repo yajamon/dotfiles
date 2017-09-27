@@ -55,6 +55,7 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('rust-lang/rust.vim')
     call dein#add('fatih/vim-go')
+    call dein#add('leafgarland/typescript-vim')
 
     " You can specify revision/branch/tag.
     call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
