@@ -54,6 +54,10 @@ alias dirs="dirs -v"
 
 test type -a tree >/dev/null && alias tree="tree -A"
 
+# functions
+# gitignore.io : https://github.com/joeblau/gitignore.io
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
 # setup script
 for script in $(ls $DOTPATH/etc/setup_scripts)
 do
