@@ -50,5 +50,6 @@ if [ -e /usr/local/go ]; then
 fi
 
 PATH="$HOME/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 export PATH
 
