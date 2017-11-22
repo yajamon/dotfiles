@@ -1,0 +1,19 @@
+#!/bin/bash
+
+readonly VIMREPO=$GHQ_ROOT/github.com/yajamon/vim
+
+cd $VIMREPO
+git fetch --all --prune
+git checkout master && git merge --ff upstream/master
+
+make distclean
+./configure --with-features=huge \
+    --enable-perlinterp \
+    --enable-rubyinterp \
+    --enable-luainterp \
+    --enable-fail-if-missing \
+    --prefix=/usr/local
+make
+sudo make uninstall
+sudo make install
+
