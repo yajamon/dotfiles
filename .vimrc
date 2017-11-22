@@ -54,7 +54,6 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('Shougo/neocomplete.vim')
-    let g:neocomplete#enable_at_startup = 1
     call dein#add('rust-lang/rust.vim')
     call dein#add('fatih/vim-go')
     call dein#add('leafgarland/typescript-vim')
@@ -75,6 +74,9 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
+
+" Plugin settings
+let g:neocomplete#enable_at_startup = 1
 
 "End dein Scripts-------------------------
 
