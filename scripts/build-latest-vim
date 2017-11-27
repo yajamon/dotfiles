@@ -4,7 +4,18 @@ readonly VIMREPO=$GHQ_ROOT/github.com/yajamon/vim
 
 cd $VIMREPO
 git fetch --all --prune
-git checkout master && git merge --ff upstream/master
+if [ $(git rev-parse master) = $(git rev-parse upstream/master) ]; then
+    param=""
+    while [ -z $param ]; do
+        echo -n "Already up-to-date. continue?(yN): " >&2
+        read -r param _trush
+    done
+    if [ $param != "y" ]; then
+        exit 0
+    fi
+fi
+
+git checkout master && git merge --ff upstream/master && git push
 
 make distclean
 ./configure --with-features=huge \
