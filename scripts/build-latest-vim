@@ -15,7 +15,7 @@ if [ $(git rev-parse master) = $(git rev-parse upstream/master) ]; then
     fi
 fi
 
-git checkout master && git merge --ff upstream/master && git push
+git checkout master && git merge --ff upstream/master
 
 make distclean
 ./configure --with-features=huge \
