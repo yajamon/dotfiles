@@ -49,6 +49,15 @@ if [ -e /usr/local/go ]; then
     PATH="$PATH:$GOPATH/bin:/$GOROOT/bin"
 fi
 
+# OpenSSL Path for Darwin
+if type -a brew > /dev/null && brew --prefix openssl ; then
+    OPENSSL_ROOT_DIR=$(brew --prefix openssl)
+    export OPENSSL_INCLUDE_DIR=$OPENSSL_ROOT_DIR/include
+    export OPENSSL_LIB_DIR=$OPENSSL_ROOT_DIR/lib
+    export DEP_OPENSSL_INCLUDE=$OPENSSL_ROOT_DIR/include
+fi
+
+
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 export PATH
