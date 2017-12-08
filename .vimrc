@@ -76,7 +76,7 @@ if dein#check_install()
 endif
 
 " Plugin settings
-" # neocomplete
+" # neocomplete & neosnippet
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " ## key-mappings
@@ -92,6 +92,24 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " <SPACE>: completion.
 " inoremap <expr><SPACE> pumvisible() ? "\<C-y>" : "\<SPACE>"
+
+" Note: It must be "imap" and "smap". It uses <Plug> mappings.
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+imap <expr><TAB> pumvisible() ? "\<C-n>" :
+            \ neosnippet#expandable_or_jumpable() ?
+            \ "<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+            \ "<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+    set conceallevel=2 concealcursor=niv
+endif
+
 " ## omni completion
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
