@@ -34,6 +34,9 @@ set shiftwidth=4
 "  http://wonderwall.hatenablog.com/entry/2016/03/23/232634
 set backspace=indent,eol,start
 
+" 内容が変更されたら自動的に再読み込み
+set autoread
+
 "dein Scripts-----------------------------
 if &compatible
     set nocompatible               " Be iMproved
