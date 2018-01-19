@@ -76,6 +76,10 @@ if dein#check_install()
 endif
 
 " Plugin settings
+" # rust
+" ## auto rustfmt https://github.com/rust-lang/rust.vim#formatting-with-rustfmt
+let g:rustfmt_autosave = 1
+
 " # neocomplete & neosnippet
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
