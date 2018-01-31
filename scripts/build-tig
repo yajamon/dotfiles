@@ -1,0 +1,10 @@
+#!/bin/bash
+
+readonly VIMREPO=$GHQ_ROOT/github.com/jonas/tig
+
+cd $VIMREPO || exit 1;
+
+readonly PREFIX='/usr/local'
+
+make prefix=$PREFIX
+sudo make install prefix=$PREFIX
