@@ -54,6 +54,9 @@ alias dirs="dirs -v"
 
 test type -a tree >/dev/null && alias tree="tree -A"
 
+alias gitadd="git add"
+alias gitcommit="git commit"
+
 # functions
 # gitignore.io : https://github.com/joeblau/gitignore.io
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
