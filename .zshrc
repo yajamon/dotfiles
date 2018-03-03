@@ -8,7 +8,7 @@ autoload -U compinit
 compinit -u
 
 # prompt
-PROMPT="%n:%1~%% "
+PROMPT="(*'v'):%1~%% "
 PROMPT2="%_ > "
 
 # vcs information
