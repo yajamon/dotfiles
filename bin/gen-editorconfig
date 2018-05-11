@@ -13,7 +13,11 @@ fi
 
 readonly TARGET="$DIR/.editorconfig"
 
-cat << EOT
+{
+    cat << EOT
 root = true
 
 EOT
+}
+
+
