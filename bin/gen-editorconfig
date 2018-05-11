@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ -z $1 ]; then
+    DIR=$(pwd)
+elif [ -d $1 ]; then
+    DIR=$(cd $1; pwd)
+elif [ -f $1 ]; then
+    DIR=$(cd $(dirname $1); pwd)
+else
+    echo "無効: $1" 1>&2
+    exit 1
+fi
+
+readonly TARGET="$DIR/.editorconfig"
+
+cat << EOT
+root = true
+
+EOT
