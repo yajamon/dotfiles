@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# How to Use
+# $ prefix-exec hoge
+#
+# $ echo 'add /path/to
+# commit -m "commit message"
+# ' | prefix-exec git
 
 put_stderr_when_interactive() {
     if ! [ -t 0 ]; then
