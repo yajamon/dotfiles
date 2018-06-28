@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo -n "$* > " >&2
+while read line
+do
+    if [ -z "$line" ]; then
+        continue
+    fi
+    eval params=("$line")
+    $* "${params[@]}"
+    echo -n "$* > " >&2
+done
