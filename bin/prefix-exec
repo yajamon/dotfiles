@@ -1,12 +1,20 @@
 #!/bin/bash
 
-echo -n "$* > " >&2
+put_stderr_when_interactive() {
+    if ! [ -t 0 ]; then
+        return 0
+    fi
+    echo -n "$* > " >&2
+    return 0
+}
+put_stderr_when_interactive "$*"
 while read line
 do
     if [ -z "$line" ]; then
+        put_stderr_when_interactive "$*"
         continue
     fi
     eval params=("$line")
     $* "${params[@]}"
-    echo -n "$* > " >&2
+    put_stderr_when_interactive "$*"
 done
