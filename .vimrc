@@ -55,6 +55,10 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('Shougo/neocomplete.vim')
     call dein#add('rust-lang/rust.vim')
+    call dein#add('autozimu/LanguageClient-neovim', {
+        \ 'rev': 'next',
+        \ 'build': 'bash install.sh',
+        \ })
     call dein#add('fatih/vim-go')
     call dein#add('leafgarland/typescript-vim')
 
@@ -79,6 +83,11 @@ endif
 " # rust
 " ## auto rustfmt https://github.com/rust-lang/rust.vim#formatting-with-rustfmt
 let g:rustfmt_autosave = 1
+
+" # LanguageClient
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }
 
 " # neocomplete & neosnippet
 let g:neocomplete#enable_at_startup = 1
