@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd "$HOME/Library/MobileDevice/Provisioning Profiles/"
+ls | xargs rm -v
