@@ -2,8 +2,17 @@
 SRC_FILE=$1
 DST_PATH=$2
 
+help() {
+    {
+        echo 'How to Use:'
+        echo '    command SRC_FILE DST_PATH'
+    } >&2
+}
+
 if [ -z "$DST_PATH" ]; then
-    DST_PATH=$(dirname $0)
+    echo "ERROR!! : missing DST_PATH" >&2
+    help
+    exit 1
 fi
 
 error() {
