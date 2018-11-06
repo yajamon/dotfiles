@@ -28,11 +28,12 @@ if [ -z $SRC_FILE ]
   then
     echo "No argument given"
 else
-  convert "$SRC_FILE" -resize 29x29     "$DST_PATH/Icon-Small.png"
+  convert "$SRC_FILE" -resize 20x20     "$DST_PATH/Icon-Small.png"
+  convert "$SRC_FILE" -resize 29x29     "$DST_PATH/Icon-Small-29.png"
   convert "$SRC_FILE" -resize 40x40     "$DST_PATH/Icon-Small-40.png"
   convert "$SRC_FILE" -resize 50x50     "$DST_PATH/Icon-Small-50.png"
   convert "$SRC_FILE" -resize 57x57     "$DST_PATH/Icon.png"
-  convert "$SRC_FILE" -resize 58x58     "$DST_PATH/Icon-Small@2x.png"
+  convert "$SRC_FILE" -resize 58x58     "$DST_PATH/Icon-Small-29@2x.png"
   convert "$SRC_FILE" -resize 60x60     "$DST_PATH/Icon-60.png"
   convert "$SRC_FILE" -resize 72x72     "$DST_PATH/Icon-72.png"
   convert "$SRC_FILE" -resize 76x76     "$DST_PATH/Icon-76.png"
