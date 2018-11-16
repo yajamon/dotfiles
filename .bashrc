@@ -5,6 +5,13 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+#dotfile path
+if [[ -z $DOTPATH ]]; then
+    export DOTPATH="$HOME/dotfiles"
+fi
+. "$DOTPATH"/etc/lib/util.sh
+
+
 # ls
 if is_osx ; then
     alias ls='ls -G'
