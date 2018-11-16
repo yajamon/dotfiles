@@ -43,10 +43,9 @@ fi
 
 # go
 if [ -e /usr/local/go ]; then
-    export GOROOT="/usr/local/go"
-    export GOPATH="$HOME/.go"
-    export GHQ_ROOT=$GOPATH
-    PATH="$PATH:$GOPATH/bin:/$GOROOT/bin"
+    export GHQ_ROOT="$HOME/go/src"
+    PATH="$PATH:$HOME/go/bin"
+    PATH="$PATH:/usr/local/go/bin"
 fi
 
 # OpenSSL Path for Darwin
