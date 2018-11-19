@@ -1,0 +1,29 @@
+#!/bin/bash
+
+readonly ACCOUNT_ROOT="$HOME/.dg"
+readonly SEP='.'
+
+# getoptsによる引数判定
+while getopts "hl" OPT ; do
+    case "$OPT" in
+        h) echo "Help: dg-switch [-hl] [TARGET_NAME]" >&2 ; exit 1 ;;
+        l) cd $ACCOUNT_ROOT; ls | grep "credentials$SEP" ; exit 1 ;;
+    esac
+done
+
+shift $((OPTIND -1))
+
+# 引数なしなら現状を表示して終了
+if [ -z "$*" ]; then
+    cat "$ACCOUNT_ROOT/credentials" || exit $?
+    exit 0
+fi
+
+cd $ACCOUNT_ROOT
+readonly TARGET_NAME="credentials$SEP$1"
+if [ ! -e $TARGET_NAME ]; then
+    echo "Unknown '$1'" >&2
+    exit 2
+fi
+
+cp $TARGET_NAME credentials
