@@ -12,5 +12,5 @@ _dg-switch() {
 }
 
 __dg-switch() {
-    _values 'accounts' $(cd $DG_ROOT && ls | grep "credentials$SEP" | cut -d"$SEP" -f2 )
+    _values 'accounts' $(cd $DG_ROOT && dg-switch -l )
 }

@@ -7,7 +7,7 @@ readonly SEP='.'
 while getopts "hl" OPT ; do
     case "$OPT" in
         h) echo "Help: dg-switch [-hl] [TARGET_NAME]" >&2 ; exit 1 ;;
-        l) cd $ACCOUNT_ROOT; ls | grep "credentials$SEP" ; exit 1 ;;
+        l) cd $ACCOUNT_ROOT; ls | grep "credentials$SEP" | cut -d"$SEP" -f2 ; exit 1 ;;
     esac
 done
 
