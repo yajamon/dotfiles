@@ -1,0 +1,13 @@
+#!/bin/bash
+
+readonly ACCOUNT_ROOT="$HOME/.dg"
+readonly SEP='.'
+
+# getoptsによる引数判定
+while getopts "hl" OPT ; do
+    case "$OPT" in
+        h) echo "Help: dg-switch [-hl] [TARGET_NAME]" >&2 ; exit 1 ;;
+        l) cd $ACCOUNT_ROOT; ls | grep "credentials$SEP" ; exit 1 ;;
+    esac
+done
+
