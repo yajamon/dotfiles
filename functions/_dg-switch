@@ -1,0 +1,9 @@
+#compdef dg-switch
+
+# 定数 (readonlyをつけたら動かなくなるぞ！！！)
+DG_ROOT="$HOME/.dg"
+SEP='.'
+
+_dg-switch() {
+    _values 'accounts' $(cd $DG_ROOT && ls | grep "credentials$SEP" | cut -d"$SEP" -f2 )
+}
