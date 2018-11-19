@@ -11,3 +11,11 @@ while getopts "hl" OPT ; do
     esac
 done
 
+shift $((OPTIND -1))
+
+# 引数なしなら現状を表示して終了
+if [ -z "$*" ]; then
+    cat "$ACCOUNT_ROOT/credentials" || exit $?
+    exit 0
+fi
+
