@@ -5,5 +5,12 @@ DG_ROOT="$HOME/.dg"
 SEP='.'
 
 _dg-switch() {
+    _arguments \
+        '(- *)-h[show help]' \
+        '(- *)-l[list accounts]' \
+        '*:accounts:__dg-switch'
+}
+
+__dg-switch() {
     _values 'accounts' $(cd $DG_ROOT && ls | grep "credentials$SEP" | cut -d"$SEP" -f2 )
 }
