@@ -6,9 +6,9 @@ SEP='.'
 
 _dg-switch() {
     _arguments \
-        '(- *)-h[show help]' \
-        '(- *)-l[list accounts]' \
-        '*:accounts:__dg-switch'
+        '(- 1)-h[show help]' \
+        '(- 1)-l[list accounts]' \
+        '1:accounts:__dg-switch'
 }
 
 __dg-switch() {
