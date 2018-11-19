@@ -19,3 +19,11 @@ if [ -z "$*" ]; then
     exit 0
 fi
 
+cd $ACCOUNT_ROOT
+readonly TARGET_NAME="credentials$SEP$1"
+if [ ! -e $TARGET_NAME ]; then
+    echo "Unknown '$1'" >&2
+    exit 2
+fi
+
+cp $TARGET_NAME credentials
