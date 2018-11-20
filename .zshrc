@@ -1,5 +1,9 @@
 echo "load .zshrc" >&2
 
+#dotfile path
+if [[ -z $DOTPATH ]]; then
+    export DOTPATH="$HOME/dotfiles"
+fi
 # libs
 source $DOTPATH/etc/lib/util.sh
 
