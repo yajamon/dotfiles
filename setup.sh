@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOT_PATH=$HOME/dotfiles
-DOT_FILES=($DOT_PATH/.??* bin scripts "functions")
+DOT_FILES=($DOT_PATH/.??* bin "functions")
 
 for file in ${DOT_FILES[@]}
 do

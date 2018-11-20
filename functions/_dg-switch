@@ -1,0 +1,16 @@
+#compdef dg-switch
+
+# 定数 (readonlyをつけたら動かなくなるぞ！！！)
+DG_ROOT="$HOME/.dg"
+SEP='.'
+
+_dg-switch() {
+    _arguments \
+        '(- 1)-h[show help]' \
+        '(- 1)-l[list accounts]' \
+        '1:accounts:__dg-switch'
+}
+
+__dg-switch() {
+    _values 'accounts' $(cd $DG_ROOT && dg-switch -l )
+}
