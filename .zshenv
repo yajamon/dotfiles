@@ -42,11 +42,16 @@ if [ -e /usr/libexec/java_home ]; then
 fi
 
 # go
-if [ -e /usr/local/go ]; then
-    export GHQ_ROOT="$HOME/go/src"
+if [ -e /usr/local/go ] ; then
     PATH="$PATH:$HOME/go/bin"
     PATH="$PATH:/usr/local/go/bin"
 fi
+if [ -e /usr/lib/go ]; then
+    PATH="$PATH:$HOME/go/bin"
+    PATH="$PATH:/usr/lib/go/bin"
+fi
+# GHQ
+export GHQ_ROOT="$HOME/go/src"
 
 # OpenSSL Path for Darwin
 if type -a brew > /dev/null && brew --prefix openssl ; then
