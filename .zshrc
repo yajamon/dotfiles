@@ -47,7 +47,9 @@ alias vi="vim"
 if is_osx; then
     alias ls="ls -G"
 else
-    alias ls="ls --color"
+    # やむなくここで
+    eval $(dircolors $HOME/.dir_colors/dircolors.ansi-universal)
+    alias ls="ls --color=auto"
 fi
 alias ll="ls -lh"
 

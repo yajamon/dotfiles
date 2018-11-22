@@ -6,6 +6,9 @@ fi
 if [[ -z $DOTPATH ]]; then
     export DOTPATH="$HOME/dotfiles"
 fi
+# libs
+source $DOTPATH/etc/lib/util.sh
+
 
 export LANG=ja_JP.UTF-8
 PATH="/usr/local/bin:$PATH"
@@ -17,7 +20,9 @@ export FPATH="${HOME}/functions:$FPATH"
 
 
 # ls
-export LSCOLORS='gxfxcxdxbxegedabagacad'
+if is_osx ; then
+    export LSCOLORS='gxfxcxdxbxegedabagacad'
+fi
 
 # anyenv
 if [ -d $HOME/.anyenv/bin ]; then
