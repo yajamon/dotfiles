@@ -9,6 +9,7 @@ do
     [[ $file == *.DS_Store ]] && continue
     [[ $file == .git ]] && continue
     [[ $file == .gitignore ]] && continue
+    [[ $file == .gitmodules ]] && continue
 
     if [ -L $HOME/$file ] ; then
         [ "$(readlink $HOME/$file)" = "$DOT_PATH/$file" ] && echo "exists link: $HOME/$file"
