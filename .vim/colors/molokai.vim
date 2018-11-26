@@ -1,0 +1,1 @@
+repos/github.com/tomasr/molokai/colors/molokai.vim
