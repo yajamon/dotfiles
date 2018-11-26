@@ -73,3 +73,9 @@ Session.vim
 .netrwhist
 # auto-generated tag files
 tags
+
+
+### Customize ###
+
+# Vim
+.vim/bundles
