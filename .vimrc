@@ -8,6 +8,9 @@ set listchars=tab:>-
 syntax on
 set cursorline
 
+" ColorScheme
+colorscheme molokai
+
 "  Search
 "  http://kaworu.jpn.org/kaworu/2010-11-24-1.php
 "  http://kaworu.jpn.org/kaworu/2010-11-21-1.php
