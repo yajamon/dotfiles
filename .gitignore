@@ -80,3 +80,6 @@ tags
 # Vim
 .vim/bundles
 .vim/view
+
+# ssh
+.ssh
