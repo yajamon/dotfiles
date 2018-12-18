@@ -4,3 +4,6 @@
 
 # ssh
 .ssh
+
+# zsh completion
+.zfunc/_rustup  # rustupは環境ごとにバージョンが異なることが考えられるため
