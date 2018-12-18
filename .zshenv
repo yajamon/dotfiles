@@ -14,10 +14,10 @@ export LANG=ja_JP.UTF-8
 PATH="/usr/local/bin:$PATH"
 
 
-# 自作の補完関数群
-export FPATH="/usr/local/share/zsh-completions:$FPATH"
-export FPATH="${HOME}/functions:$FPATH"
-
+# 補完関数群
+FPATH="/usr/local/share/zsh-completions:$FPATH"
+FPATH="${HOME}/.zfunc:$FPATH"
+export FPATH
 
 # ls
 if is_osx ; then
