@@ -51,7 +51,9 @@ else
     eval $(dircolors $HOME/.dir_colors/dircolors.ansi-universal)
     alias ls="ls --color=auto"
 fi
+alias la="ls -a"
 alias ll="ls -lh"
+alias lla="ll -a"
 
 alias du="du -h"
 alias df="df -h"
