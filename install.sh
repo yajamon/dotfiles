@@ -4,9 +4,8 @@ DOTFILES_REPO="https://github.com/yajamon/dotfiles.git"
 DOT_PATH=$HOME/dotfiles
 
 if ! type -a git; then
-    if type -a yum; then
-        sudo yum install -y git
-    fi
+    echo "REQUIRED COMMAND: git" >&2
+    exit 1
 fi
 
 git clone --recursive $DOTFILES_REPO $DOT_PATH

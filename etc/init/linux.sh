@@ -4,7 +4,9 @@ DOT_PATH=$HOME/dotfiles
 INIT_SCRIPTS=$DOT_PATH/etc/init
 
 if type -a yum >/dev/null 2>&1 ; then
-    bash $INIT_SCRIPTS/yum.sh
+    echo "Reccomend: let's install tools" >&2
+    echo "bash $INIT_SCRIPTS/yum.sh" >&2
 fi
 
-bash $INIT_SCRIPTS/dein.vim.sh
+echo "Reccomend: dein.vim" >&2
+echo "bash $INIT_SCRIPTS/dein.vim.sh" >&2
