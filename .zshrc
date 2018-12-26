@@ -55,6 +55,8 @@ alias la="ls -a"
 alias ll="ls -lh"
 alias lla="ll -a"
 
+alias more="less"
+
 alias du="du -h"
 alias df="df -h"
 
