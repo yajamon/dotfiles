@@ -32,3 +32,5 @@
 	default = simple
 [color]
 	ui = true
+[diff]
+	indentHeuristic = true
