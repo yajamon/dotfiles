@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd "$HOME/Library/Developer/Xcode/DerivedData/"
+ls
+ls | xargs rm -vr
