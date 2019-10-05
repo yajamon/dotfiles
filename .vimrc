@@ -58,11 +58,10 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('Shougo/deoplete.nvim')
 
+    call dein#add('prabirshrestha/async.vim')
+    call dein#add('prabirshrestha/vim-lsp')
+
     call dein#add('rust-lang/rust.vim')
-    call dein#add('autozimu/LanguageClient-neovim', {
-        \ 'rev': 'next',
-        \ 'build': 'bash install.sh',
-        \ })
     call dein#add('fatih/vim-go')
     call dein#add('leafgarland/typescript-vim')
     call dein#add('editorconfig/editorconfig-vim')
@@ -89,10 +88,16 @@ endif
 " ## auto rustfmt https://github.com/rust-lang/rust.vim#formatting-with-rustfmt
 let g:rustfmt_autosave = 1
 
-" # LanguageClient
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ }
+" # vim-lsp
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+        \ 'whitelist': ['rust']
+        \ })
+endif
+
 
 " # deoplete & neosnippet
 let g:deoplete#enable_at_startup = 1
