@@ -56,7 +56,8 @@ if dein#load_state('~/.vim/bundles')
     " Add or remove your plugins here:
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('Shougo/neocomplete.vim')
+    call dein#add('Shougo/deoplete.nvim')
+
     call dein#add('rust-lang/rust.vim')
     call dein#add('autozimu/LanguageClient-neovim', {
         \ 'rev': 'next',
@@ -93,9 +94,9 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ }
 
-" # neocomplete & neosnippet
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
+" # deoplete & neosnippet
+let g:deoplete#enable_at_startup = 1
+
 " ## key-mappings
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -105,8 +106,8 @@ endfunction
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-r>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 " <SPACE>: completion.
 " inoremap <expr><SPACE> pumvisible() ? "\<C-y>" : "\<SPACE>"
 
