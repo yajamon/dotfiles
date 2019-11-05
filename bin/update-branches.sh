@@ -8,8 +8,8 @@ readonly Rewind=$(git branch | grep '*' | tr -d '*')
 
 git branch -l $PATTERN | tr '*' ' ' | ( while read bname
 do
-    git switch "$bname" && git merge --ff-only origin/"$bname"
+    git switch $bname && git merge --ff-only origin/$bname
 done
 
-git switch "$Rewind"
+git switch $Rewind
 )
