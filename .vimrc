@@ -105,6 +105,7 @@ endif
 
 " # deoplete & neosnippet
 let g:deoplete#enable_at_startup = 1
+let g:neosnippet#snippets_directory = $HOME.'/.vim/neosnippet-snippets/snippets'
 
 " ## key-mappings
 " <CR>: close popup and save indent.

@@ -1,0 +1,4 @@
+snippet     dirpath-src
+abbr        ファイルのあるディレクトリ
+options     head
+    readonly DIRPATH=$(cd $(dirname ${BASH_SOURCE:-\$0})/; pwd)
