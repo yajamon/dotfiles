@@ -69,6 +69,12 @@ alias gitcommit="git commit"
 
 alias grep="grep --color=auto"
 
+# the Fuck
+if type -a thefuck 1>/dev/null; then
+    eval $(thefuck --alias)
+    alias f="fuck"
+fi
+
 # functions
 # gitignore.io : https://github.com/joeblau/gitignore.io
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
