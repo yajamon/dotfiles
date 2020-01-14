@@ -25,11 +25,6 @@ if type -a anyenv 1>/dev/null ; then
     eval "$(anyenv init -)"
 fi
 
-### local scope
-if [ -f $HOME/.local/export_path.sh ]; then
-    . $HOME/.local/export_path.sh
-fi
-
 ### Rust
 if [ -d $HOME/.cargo/bin ]; then
     PATH="$HOME/.cargo/bin:$PATH"
