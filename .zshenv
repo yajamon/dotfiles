@@ -17,6 +17,7 @@ PATH="/usr/local/bin:$PATH"
 # 補完関数群
 FPATH="/usr/local/share/zsh-completions:$FPATH"
 FPATH="${HOME}/.zfunc:$FPATH"
+FPATH="${HOME}/.local/share/zsh-completions:$FPATH"
 export FPATH
 
 # ls
