@@ -13,13 +13,13 @@ source $DOTPATH/etc/lib/util.sh
 
 ## PATH settings
 
-typeset -U path
+typeset -U path PATH
 
 # PATH="/usr/local/bin:$PATH"
 
 ### anyenv
 if [ -d $HOME/.anyenv/bin ]; then
-    PATH="$PATH:$HOME/.anyenv/bin"
+    path=($path "$HOME/.anyenv/bin")
 fi
 if type -a anyenv 1>/dev/null ; then
     eval "$(anyenv init -)"
@@ -27,7 +27,7 @@ fi
 
 ### Rust
 if [ -d $HOME/.cargo/bin ]; then
-    PATH="$HOME/.cargo/bin:$PATH"
+    path=("$HOME/.cargo/bin" $path)
 fi
 
 ### java
@@ -37,14 +37,12 @@ fi
 
 ### go
 if [ -e /usr/local/go ] ; then
-    PATH="$PATH:$HOME/go/bin"
-    PATH="$PATH:/usr/local/go/bin"
+    path=($path "$HOME/go/bin")
+    path=($path "$HOME/usr/local/go/bin")
 fi
 if [ -e /usr/lib/go ]; then
-    PATH="$PATH:$HOME/go/bin"
-    PATH="$PATH:/usr/lib/go/bin"
+    path=($path "$HOME/go/bin")
+    path=($path "$HOME/usr/lib/go/bin")
 fi
 
-PATH="$HOME/bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"
-export PATH
+path=("$HOME/.local/bin" "$HOME/bin" $path)
