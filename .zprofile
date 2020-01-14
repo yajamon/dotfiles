@@ -1,8 +1,8 @@
 umask 022
 
-if [[ -n $TMUX ]]; then
-    return 0
-fi
+# if [[ -n $TMUX ]]; then
+#     return 0
+# fi
 
 # dotfilesへのパスを定義
 if [[ -z $DOTPATH ]]; then
