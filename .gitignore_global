@@ -1,8 +1,11 @@
 ,
 
+# Created by https://www.gitignore.io/api/windows,macos,linux,vim,xcode,visualstudiocode,direnv
+# Edit at https://www.gitignore.io/?templates=windows,macos,linux,vim,xcode,visualstudiocode,direnv
 
-# Created by https://www.gitignore.io/api/windows,macos,linux,vim,xcode,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=windows,macos,linux,vim,xcode,visualstudiocode
+### direnv ###
+.direnv
+.envrc
 
 ### Linux ###
 *~
@@ -143,4 +146,4 @@ DerivedData/
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.gitignore.io/api/windows,macos,linux,vim,xcode,visualstudiocode
+# End of https://www.gitignore.io/api/windows,macos,linux,vim,xcode,visualstudiocode,direnv
