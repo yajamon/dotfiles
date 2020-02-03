@@ -8,7 +8,7 @@ if ! has "tmux"; then
     exit 1
 fi
 
-if tmux has-session >/dev/null 2>&1 && tmux list-sessions | grep -qE '.*]$'; then
+if tmux has-session >/dev/null 2>&1 && tmux list-sessions | grep -qE '.*(\)|\])$'; then
     # detached sesison exists
     tmux list-sessions | perl -pe 's/(^.*?):/\033[31m$1:\033[m/'
     echo -n "Tmux: attach? (y/N num/session-name) "
