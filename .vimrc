@@ -64,6 +64,10 @@ if dein#load_state('~/.vim/bundles')
 
     call dein#add('prabirshrestha/async.vim')
     call dein#add('prabirshrestha/vim-lsp')
+    call dein#add('mattn/vim-lsp-settings')
+    call dein#add('lighttiger2505/deoplete-vim-lsp')
+    call dein#add('thomasfaingnaert/vim-lsp-snippets')
+    call dein#add('thomasfaingnaert/vim-lsp-neosnippet')
 
     call dein#add('rust-lang/rust.vim')
     call dein#add('fatih/vim-go')
@@ -150,5 +154,8 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+" # vim-lsp-settings
+let g:lsp_settings_servers_dir = $HOME."/.config/lsp-servers"
+"
 "End dein Scripts-------------------------
 
