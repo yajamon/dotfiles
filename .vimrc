@@ -113,18 +113,14 @@ endif
 " # deoplete
 let g:deoplete#enable_at_startup = 1
 
-" ## key-mappings
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
     return deoplete#close_popup() . "\<CR>"
 endfunction
-" <TAB>: completion.
 " <C-r>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
-" <SPACE>: completion.
-" inoremap <expr><SPACE> pumvisible() ? "\<C-y>" : "\<SPACE>"
 
 " # neosnippet
 let g:neosnippet#snippets_directory = $HOME.'/.vim/neosnippet-snippets/snippets'
