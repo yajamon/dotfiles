@@ -96,24 +96,6 @@ endif
 " ## auto rustfmt https://github.com/rust-lang/rust.vim#formatting-with-rustfmt
 let g:rustfmt_autosave = 1
 
-" # vim-lsp
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
-        \ 'whitelist': ['rust']
-        \ })
-endif
-if executable('sourcekit-lsp')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'sourcekit-lsp',
-        \ 'cmd': {server_info->['sourcekit-lsp']},
-        \ 'whitelist': ['swift'],
-        \ })
-endif
-
-
 " # deoplete
 let g:deoplete#enable_at_startup = 1
 
@@ -156,6 +138,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " # vim-lsp-settings
 let g:lsp_settings_servers_dir = $HOME."/.config/lsp-servers"
+let g:lsp_settings_typescript = ['typescript-language-server', 'eslint-language-server']
 "
 "End dein Scripts-------------------------
 
