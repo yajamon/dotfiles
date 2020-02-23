@@ -139,6 +139,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " # vim-lsp-settings
 let g:lsp_settings_servers_dir = $HOME."/.config/lsp-servers"
 let g:lsp_settings_typescript = ['typescript-language-server', 'eslint-language-server']
-"
+
 "End dein Scripts-------------------------
 
