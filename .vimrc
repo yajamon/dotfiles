@@ -110,9 +110,8 @@ if executable('sourcekit-lsp')
 endif
 
 
-" # deoplete & neosnippet
+" # deoplete
 let g:deoplete#enable_at_startup = 1
-let g:neosnippet#snippets_directory = $HOME.'/.vim/neosnippet-snippets/snippets'
 
 " ## key-mappings
 " <CR>: close popup and save indent.
@@ -126,6 +125,9 @@ inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 " <SPACE>: completion.
 " inoremap <expr><SPACE> pumvisible() ? "\<C-y>" : "\<SPACE>"
+
+" # neosnippet
+let g:neosnippet#snippets_directory = $HOME.'/.vim/neosnippet-snippets/snippets'
 
 " Note: It must be "imap" and "smap". It uses <Plug> mappings.
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
