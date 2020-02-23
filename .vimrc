@@ -117,7 +117,7 @@ let g:deoplete#enable_at_startup = 1
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-    return (pumvisible() ? "\<C-y>" : "") . "\<CR>"
+    return deoplete#close_popup() . "\<CR>"
 endfunction
 " <TAB>: completion.
 " <C-r>, <BS>: close popup and delete backword char.
