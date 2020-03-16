@@ -8,6 +8,11 @@ if ! has "tmux"; then
     exit 1
 fi
 
+# is_tmux_running
+if [ ! -z "$TMUX" ] ; then
+    exit 0
+fi
+
 if tmux has-session >/dev/null 2>&1 && tmux list-sessions | grep -qE '.*(\)|\])$'; then
     # detached sesison exists
     tmux list-sessions | perl -pe 's/(^.*?):/\033[31m$1:\033[m/'
