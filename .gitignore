@@ -1,6 +1,7 @@
 # Vim
 .vim/bundles
 .vim/view
+!.vim/neosnippet-snippets
 
 # ssh
 .ssh
