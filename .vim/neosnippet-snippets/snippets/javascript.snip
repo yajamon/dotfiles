@@ -1,0 +1,51 @@
+snippet     split
+abbr        split(",")
+options     word
+    split("${1:#:separator}")${0}
+
+snippet     map
+abbr        map((x) => {...})
+options     word
+    map((${1:x}) => ${2})${3}
+
+snippet     reduce
+abbr        reduce((acc, cur) => {...},
+options     word
+    reduce((acc, cur) => ${1})${2}
+
+snippet     coins_by_price
+abbr        function coins(price)
+    function coins(price) {
+        let coin_500 = Math.floor(price / 500);
+        price -= coin_500 * 500;
+
+        let coin_100 = Math.floor(price / 100);
+        price -= coin_100 * 100;
+
+        let coin_50 = Math.floor(price / 50);
+        price -= coin_50 * 50;
+
+        let coin_10 = Math.floor(price / 10);
+        price -= coin_10 * 10;
+
+        let coin_5 = Math.floor(price / 5);
+        price -= coin_5 * 5;
+
+        let coin_1 = Math.floor(price / 1);
+        price -= coin_1 * 1;
+        return [coin_500, coin_100, coin_50, coin_10, coin_5, coin_1];
+    }
+
+snippet     price_by_coins
+abbr        function price(...coins)
+    function price(coin_500, coin_100, coin_50, coin_10, coin_5, coin_1) {
+        return (
+            coin_500 * 500  +
+            coin_100 * 100  +
+            coin_50  * 50   +
+            coin_10  * 10   +
+            coin_5   * 5    +
+            coin_1   * 1
+        );
+    }
+
