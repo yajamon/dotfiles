@@ -35,6 +35,9 @@ if type -a brew > /dev/null && brew --prefix openssl > /dev/null; then
     export OPENSSL_INCLUDE_DIR=$OPENSSL_ROOT_DIR/include
     export OPENSSL_LIB_DIR=$OPENSSL_ROOT_DIR/lib
     export DEP_OPENSSL_INCLUDE=$OPENSSL_ROOT_DIR/include
+
+    # Ruby use Homebrew OpenSSL (note: will not work for ruby < 2.4)
+    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 fi
 
 
