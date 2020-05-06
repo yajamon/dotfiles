@@ -140,5 +140,19 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:lsp_settings_servers_dir = $HOME."/.config/lsp-servers"
 let g:lsp_settings_typescript = ['typescript-language-server', 'eslint-language-server']
 
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer> gd <Plug>(lsp-definition)
+    nmap <buffer> <F2> <Plug>(lsp-rename)
+
+    autocmd BufWritePre <buffer> LspDocumentFormatSync
+endfunction
+
+augroup lsp_install
+    autocmd!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
 "End dein Scripts-------------------------
 
