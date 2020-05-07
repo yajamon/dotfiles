@@ -145,6 +145,11 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal signcolumn=yes
     nmap <buffer> gd <Plug>(lsp-definition)
     nmap <buffer> <F2> <Plug>(lsp-rename)
+    nmap <buffer> K <Plug>(lsp-hover)
+    nmap <buffer> ,d <Plug>(lsp-document-diagnostics)
+    nmap <buffer> ,. <Plug>(lsp-code-action)
+    nmap <buffer> ]e <Plug>(lsp-next-diagnostic)
+    nmap <buffer> [e <Plug>(lsp-previous-diagnostic)
 
     autocmd BufWritePre <buffer> LspDocumentFormatSync
 endfunction
