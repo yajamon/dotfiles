@@ -1,3 +1,6 @@
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp932
+
 "  Information
 "  http://qiita.com/mfujimori/items/9fd41bcd8d1ce9170301
 set number
