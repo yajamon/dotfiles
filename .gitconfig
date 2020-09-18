@@ -34,3 +34,6 @@
 	ui = true
 [diff]
 	indentHeuristic = true
+[init]
+	# この指定の理由はコミットメッセージに書いてある git blame でもして
+	defaultBranch = master
