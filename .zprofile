@@ -15,6 +15,11 @@ source $DOTPATH/etc/lib/util.sh
 
 typeset -U path PATH
 
+### Apple Silicon homebrew
+if [ -d /opt/homebrew ]; then
+    path=("/opt/homebrew/bin" $path)
+fi
+
 # PATH="/usr/local/bin:$PATH"
 
 ### anyenv
