@@ -51,6 +51,12 @@ if [ -e /usr/lib/go ]; then
     path=($path "$HOME/usr/lib/go/bin")
 fi
 
+### deno
+if [ -e "$HOME/.deno" ] ; then
+    export DENO_INSTALL="$HOME/.deno"
+    path=("$HOME/.deno/bin" $path)
+fi
+
 ### direnv
 if type -a direnv 1>/dev/null ; then
     eval "$(direnv hook zsh)"
