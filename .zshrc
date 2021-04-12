@@ -69,6 +69,11 @@ alias gitcommit="git commit"
 
 alias grep="grep --color=auto"
 
+## safety
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+
 # the Fuck
 if type -a thefuck 1>/dev/null; then
     eval $(thefuck --alias)
