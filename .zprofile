@@ -36,7 +36,7 @@ if [ -d $HOME/.cargo/bin ]; then
 fi
 
 ### java
-if [ -e /usr/libexec/java_home ]; then
+if /usr/libexec/java_home -v 1.8 1>/dev/null 2>&1 ; then
     export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 fi
 
