@@ -32,7 +32,7 @@ fi
 
 ### Rust
 if [ -d $HOME/.cargo/bin ]; then
-    path=("$HOME/.cargo/bin" $path)
+    . "$HOME/.cargo/env"
 fi
 
 ### java
