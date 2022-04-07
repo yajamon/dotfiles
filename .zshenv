@@ -15,6 +15,7 @@ export LANG=ja_JP.UTF-8
 
 # 補完関数群
 FPATH="/usr/local/share/zsh-completions:$FPATH"
+FPATH="/opt/homebrew/share/zsh/site-functions:$FPATH"
 FPATH="${HOME}/.zfunc:$FPATH"
 FPATH="${HOME}/.local/share/zsh-completions:$FPATH"
 export FPATH
