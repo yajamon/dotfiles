@@ -24,6 +24,11 @@
 	unstage = reset HEAD
 	ap = add -p
 
+[ghq]
+	root = ~/ghq/yajamon
+[includeIf "gitdir:~/ghq/yajamon/"]
+	path = ~/ghq/yajamon/.gitconfig
+
 [commit]
 	template = ~/.stCommitMsg
 [pull]

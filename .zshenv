@@ -26,9 +26,6 @@ fi
 
 
 
-# GHQ
-export GHQ_ROOT="$HOME/go/src"
-
 # OpenSSL Path for Darwin
 if type -a brew > /dev/null && brew --prefix openssl > /dev/null; then
     OPENSSL_ROOT_DIR=$(brew --prefix openssl)
