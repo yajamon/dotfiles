@@ -64,6 +64,7 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('Shougo/ddc-around')
 
     " Ddc filters
+    call dein#add('Shougo/ddc-matcher_head')
     call dein#add('Shougo/ddc-sorter_rank')
 
     call dein#add('Shougo/neosnippet.vim')
@@ -107,6 +108,7 @@ let g:rustfmt_autosave = 1
 call ddc#custom#patch_global('sources', ['around'])
 call ddc#custom#patch_global('sourceOptions', {
             \ '_': {
+            \   'matchers': ['matcher_head'],
             \   'sorters': ['sorter_rank'] },
             \ })
 
