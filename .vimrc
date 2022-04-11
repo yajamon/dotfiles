@@ -61,6 +61,7 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('vim-denops/denops.vim')
 
     " Ddc sources
+    call dein#add('Shougo/ddc-around')
 
     " Ddc filters
 
@@ -101,6 +102,11 @@ endif
 let g:rustfmt_autosave = 1
 
 " # ddc
+call ddc#custom#patch_global('sources', ['around'])
+call ddc#custom#patch_global('sourceOptions', {
+            \ 'around': {'mark': 'A'},
+            \ })
+
 call ddc#enable()
 
 " # neosnippet
