@@ -59,16 +59,10 @@ if dein#load_state('~/.vim/bundles')
     " Add or remove your plugins here:
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('Shougo/deoplete.nvim')
-    if !has('nvim')
-        call dein#add('roxma/nvim-yarp')
-        call dein#add('roxma/vim-hug-neovim-rpc')
-    endif
 
     call dein#add('prabirshrestha/async.vim')
     call dein#add('prabirshrestha/vim-lsp')
     call dein#add('mattn/vim-lsp-settings')
-    call dein#add('lighttiger2505/deoplete-vim-lsp')
     call dein#add('thomasfaingnaert/vim-lsp-snippets')
     call dein#add('thomasfaingnaert/vim-lsp-neosnippet')
 
@@ -98,18 +92,6 @@ endif
 " # rust
 " ## auto rustfmt https://github.com/rust-lang/rust.vim#formatting-with-rustfmt
 let g:rustfmt_autosave = 1
-
-" # deoplete
-let g:deoplete#enable_at_startup = 1
-
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return deoplete#close_popup() . "\<CR>"
-endfunction
-" <C-r>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
 " # neosnippet
 let g:neosnippet#snippets_directory = $HOME.'/.vim/neosnippet-snippets/snippets'
