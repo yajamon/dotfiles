@@ -105,7 +105,7 @@ let g:rustfmt_autosave = 1
 
 " # ddc
 " ## DDC global settings
-call ddc#custom#patch_global('sources', ['around'])
+call ddc#custom#patch_global('sources', ['around', 'neosnippet'])
 call ddc#custom#patch_global('sourceOptions', {
             \ '_': {
             \   'matchers': ['matcher_head'],
@@ -114,6 +114,9 @@ call ddc#custom#patch_global('sourceOptions', {
 
 call ddc#custom#patch_global('sourceOptions', {
             \ 'around': {'mark': 'A'},
+            \ })
+call ddc#custom#patch_global('sourceOptions', {
+            \ 'neosnippet': {'mark': 'ns', 'dup': v:true},
             \ })
 
 call ddc#enable()
