@@ -57,6 +57,13 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
 
     " Add or remove your plugins here:
+    call dein#add('Shougo/ddc.vim')
+    call dein#add('vim-denops/denops.vim')
+
+    " Ddc sources
+
+    " Ddc filters
+
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
 
@@ -92,6 +99,9 @@ endif
 " # rust
 " ## auto rustfmt https://github.com/rust-lang/rust.vim#formatting-with-rustfmt
 let g:rustfmt_autosave = 1
+
+" # ddc
+call ddc#enable()
 
 " # neosnippet
 let g:neosnippet#snippets_directory = $HOME.'/.vim/neosnippet-snippets/snippets'
