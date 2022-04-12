@@ -57,18 +57,22 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
 
     " Add or remove your plugins here:
+    call dein#add('Shougo/ddc.vim')
+    call dein#add('vim-denops/denops.vim')
+
+    " Ddc sources
+    call dein#add('Shougo/ddc-around')
+    call dein#add('shun/ddc-vim-lsp')
+
+    " Ddc filters
+    call dein#add('Shougo/ddc-matcher_head')
+    call dein#add('Shougo/ddc-sorter_rank')
+
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('Shougo/deoplete.nvim')
-    if !has('nvim')
-        call dein#add('roxma/nvim-yarp')
-        call dein#add('roxma/vim-hug-neovim-rpc')
-    endif
 
-    call dein#add('prabirshrestha/async.vim')
     call dein#add('prabirshrestha/vim-lsp')
     call dein#add('mattn/vim-lsp-settings')
-    call dein#add('lighttiger2505/deoplete-vim-lsp')
     call dein#add('thomasfaingnaert/vim-lsp-snippets')
     call dein#add('thomasfaingnaert/vim-lsp-neosnippet')
 
@@ -99,17 +103,26 @@ endif
 " ## auto rustfmt https://github.com/rust-lang/rust.vim#formatting-with-rustfmt
 let g:rustfmt_autosave = 1
 
-" # deoplete
-let g:deoplete#enable_at_startup = 1
+" # ddc
+" ## DDC global settings
+call ddc#custom#patch_global('sources', ['vim-lsp', 'around', 'neosnippet'])
+call ddc#custom#patch_global('sourceOptions', {
+            \ '_': {
+            \   'matchers': ['matcher_head'],
+            \   'sorters': ['sorter_rank'] },
+            \ })
 
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return deoplete#close_popup() . "\<CR>"
-endfunction
-" <C-r>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
+call ddc#custom#patch_global('sourceOptions', {
+            \ 'around': {'mark': 'A'},
+            \ })
+call ddc#custom#patch_global('sourceOptions', {
+            \ 'neosnippet': {'mark': 'ns', 'dup': v:true},
+            \ })
+call ddc#custom#patch_global('sourceOptions', {
+            \ 'vim-lsp': {'mark': 'lsp', 'dup': v:true},
+            \ })
+
+call ddc#enable()
 
 " # neosnippet
 let g:neosnippet#snippets_directory = $HOME.'/.vim/neosnippet-snippets/snippets'
