@@ -62,6 +62,7 @@ if dein#load_state('~/.vim/bundles')
 
     " Ddc sources
     call dein#add('Shougo/ddc-around')
+    call dein#add('shun/ddc-vim-lsp')
 
     " Ddc filters
     call dein#add('Shougo/ddc-matcher_head')
@@ -104,7 +105,7 @@ let g:rustfmt_autosave = 1
 
 " # ddc
 " ## DDC global settings
-call ddc#custom#patch_global('sources', ['around', 'neosnippet'])
+call ddc#custom#patch_global('sources', ['vim-lsp', 'around', 'neosnippet'])
 call ddc#custom#patch_global('sourceOptions', {
             \ '_': {
             \   'matchers': ['matcher_head'],
@@ -116,6 +117,9 @@ call ddc#custom#patch_global('sourceOptions', {
             \ })
 call ddc#custom#patch_global('sourceOptions', {
             \ 'neosnippet': {'mark': 'ns', 'dup': v:true},
+            \ })
+call ddc#custom#patch_global('sourceOptions', {
+            \ 'vim-lsp': {'mark': 'lsp', 'dup': v:true},
             \ })
 
 call ddc#enable()
