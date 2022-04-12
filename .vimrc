@@ -70,7 +70,6 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
 
-    call dein#add('prabirshrestha/async.vim')
     call dein#add('prabirshrestha/vim-lsp')
     call dein#add('mattn/vim-lsp-settings')
     call dein#add('thomasfaingnaert/vim-lsp-snippets')
