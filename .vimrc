@@ -65,6 +65,7 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('shun/ddc-vim-lsp')
 
     " Ddc filters
+    call dein#add('tani/ddc-fuzzy')
     call dein#add('Shougo/ddc-matcher_head')
     call dein#add('Shougo/ddc-sorter_rank')
 
@@ -108,8 +109,9 @@ let g:rustfmt_autosave = 1
 call ddc#custom#patch_global('sources', ['vim-lsp', 'around', 'neosnippet'])
 call ddc#custom#patch_global('sourceOptions', {
             \ '_': {
-            \   'matchers': ['matcher_head'],
-            \   'sorters': ['sorter_rank'] },
+            \   'matchers': ['matcher_fuzzy'],
+            \   'sorters': ['sorter_fuzzy'],
+            \   'converters': ['converter_fuzzy'] },
             \ })
 
 call ddc#custom#patch_global('sourceOptions', {
