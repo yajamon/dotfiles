@@ -31,7 +31,7 @@ if type -a anyenv 1>/dev/null ; then
 fi
 
 ### Rust
-if [ -d $HOME/.cargo/bin ]; then
+if [ -f $HOME/.cargo/env ]; then
     . "$HOME/.cargo/env"
 fi
 
