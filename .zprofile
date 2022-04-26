@@ -45,10 +45,10 @@ if [ -d $HOME/go/bin ] ; then
     path=($path "$HOME/go/bin")
 fi
 if [ -e /usr/local/go ] ; then
-    path=($path "$HOME/usr/local/go/bin")
+    path=($path "/usr/local/go/bin")
 fi
 if [ -e /usr/lib/go ]; then
-    path=($path "$HOME/usr/lib/go/bin")
+    path=($path "/usr/lib/go/bin")
 fi
 
 ### deno
