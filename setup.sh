@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DOT_PATH=$HOME/dotfiles
-DOT_FILES=($DOT_PATH/.??* bin)
+readonly DOT_PATH=$HOME/dotfiles
+readonly DOT_FILES=($DOT_PATH/.??* bin)
 
 for file in ${DOT_FILES[@]}
 do
