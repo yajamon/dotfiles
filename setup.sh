@@ -12,16 +12,18 @@ do
     [[ $file == .gitignore ]] && continue
     [[ $file == .gitmodules ]] && continue
 
-    if [ -L $HOME/$file ] ; then
-        echo "exists link: $HOME/$file" 1>&2
-        [ "$(readlink $HOME/$file)" != "$DOT_PATH/$file" ] && {
-            echo "but, look different location: $(readlink $HOME/$file)"
+    src="$DOT_PATH/$file"
+    dest="$HOME/$file"
+    if [ -L $dest ] ; then
+        echo "exists link: $dest" 1>&2
+        [ "$(readlink $dest)" != "$src" ] && {
+            echo "but, look different location: $(readlink $dest)"
         } 1>&2
         continue
     fi
-    [ -e $HOME/$file ] && echo "exists file: $HOME/$file" 1>&2 && continue
+    [ -e $dest ] && echo "exists file: $dest" 1>&2 && continue
 
-    ln -sv $DOT_PATH/$file $HOME/$file
+    ln -sv $src $dest
 done
 
 if ! [ -e $HOME/bin ] ; then
