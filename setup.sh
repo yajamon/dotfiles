@@ -12,9 +12,8 @@ do
     [[ $file == .gitmodules ]] && continue
 
     if [ -L $HOME/$file ] ; then
-        [ "$(readlink $HOME/$file)" = "$DOT_PATH/$file" ] && echo "exists link: $HOME/$file"
+        echo "exists link: $HOME/$file" 1>&2
         [ "$(readlink $HOME/$file)" != "$DOT_PATH/$file" ] && {
-            echo "exists link: $HOME/$file"
             echo "but, look different location: $(readlink $HOME/$file)"
         } 1>&2
         continue
