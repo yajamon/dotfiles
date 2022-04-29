@@ -155,7 +155,12 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " # vim-lsp-settings
-let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'eslint-language-server', 'deno']
+let g:lsp_settings = {
+            \     'efm-langserver': {
+            \         'disabled': v:false,
+            \     }
+            \ }
+let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'efm-langserver', 'deno', ]
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
