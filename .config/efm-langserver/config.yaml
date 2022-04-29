@@ -1,0 +1,30 @@
+version: 2
+root-markers:
+  - .git
+
+tools:
+  javascript-eslint: &javascript-eslint
+    prefix: eslint
+    lint-command: 'npx --no-install eslint -f visualstudio --stdin --stdin-filename ${INPUT}'
+    lint-ignore-exit-code: true
+    lint-stdin: true
+    lint-formats:
+      - "%f(%l,%c): %tarning %m"
+      - "%f(%l,%c): %rror %m"
+    root-markers:
+      - package.json
+    commands:
+      - title: 'eslint fix'
+        command: 'npx'
+        arguments:
+          - '--no-install'
+          - 'eslint'
+          - '--fix'
+          - '${INPUT}'
+
+languages:
+  javascript:
+    - <<: *javascript-eslint
+
+  typescript:
+    - <<: *javascript-eslint
