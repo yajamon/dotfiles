@@ -78,7 +78,7 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('thomasfaingnaert/vim-lsp-neosnippet')
 
     call dein#add('rust-lang/rust.vim')
-    call dein#add('fatih/vim-go')
+    " call dein#add('fatih/vim-go')
     call dein#add('leafgarland/typescript-vim')
     call dein#add('editorconfig/editorconfig-vim')
 
