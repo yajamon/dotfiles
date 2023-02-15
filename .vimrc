@@ -165,6 +165,7 @@ let g:lsp_settings = {
             \     }
             \ }
 let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'efm-langserver', 'deno', ]
+let g:lsp_settings_filetype_typescriptreact = ['typescript-language-server', 'efm-langserver', 'deno', ]
 let g:lsp_settings_filetype_javascript = ['typescript-language-server', 'efm-langserver', 'deno', ]
 
 function! s:on_lsp_buffer_enabled() abort
