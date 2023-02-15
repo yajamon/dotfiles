@@ -1,6 +1,11 @@
 #!/bin/bash
 
-readonly VIMREPO=$GHQ_ROOT/github.com/vim/vim
+readonly VIMREPO=$(ghq root)/github.com/vim/vim
+
+if ! test -d $VIMREPO; then
+    echo "Not foind $VIMREPO" >&2
+    exit 1
+fi
 
 cd $VIMREPO
 git fetch --all --prune
@@ -15,7 +20,7 @@ if [ $(git rev-parse master) = $(git rev-parse origin/master) ]; then
     fi
 fi
 
-git checkout master && git merge --ff origin/master
+git switch master && git merge --ff origin/master
 
 make distclean
 ./configure --with-features=huge \
