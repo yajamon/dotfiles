@@ -86,7 +86,7 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('editorconfig/editorconfig-vim')
 
     " You can specify revision/branch/tag.
-    call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+    " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
     " Required:
     call dein#end()
