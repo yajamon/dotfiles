@@ -60,6 +60,9 @@ if dein#load_state('~/.vim/bundles')
     call dein#add('Shougo/ddc.vim')
     call dein#add('vim-denops/denops.vim')
 
+    " Ddc UIs
+    call dein#add('Shougo/ddc-ui-native')
+
     " Ddc sources
     call dein#add('Shougo/ddc-around')
     call dein#add('shun/ddc-vim-lsp')
@@ -106,6 +109,7 @@ let g:rustfmt_autosave = 1
 
 " # ddc
 " ## DDC global settings
+call ddc#custom#patch_global('ui', 'native')
 call ddc#custom#patch_global('sources', ['vim-lsp', 'around', 'neosnippet'])
 call ddc#custom#patch_global('sourceOptions', {
             \ '_': {
