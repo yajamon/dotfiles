@@ -179,7 +179,8 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> ]e <Plug>(lsp-next-diagnostic)
     nmap <buffer> [e <Plug>(lsp-previous-diagnostic)
 
-    autocmd BufWritePre *.rs,*.ts,*.js LspDocumentFormatSync
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.ts,*.js LspDocumentFormatSync
 endfunction
 
 augroup lsp_install
