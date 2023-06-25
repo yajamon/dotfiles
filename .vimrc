@@ -176,8 +176,11 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> K <Plug>(lsp-hover)
     nmap <buffer> ,d <Plug>(lsp-document-diagnostics)
     nmap <buffer> ,. <Plug>(lsp-code-action)
-    nmap <buffer> ]e <Plug>(lsp-next-diagnostic)
-    nmap <buffer> [e <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> ,f <Plug>(lsp-document-format)
+    nmap <buffer> ]e <Plug>(lsp-next-error)
+    nmap <buffer> [e <Plug>(lsp-previous-error)
+    nmap <buffer> ]d <Plug>(lsp-next-diagnostic)
+    nmap <buffer> [d <Plug>(lsp-previous-diagnostic)
 
     let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.ts,*.js LspDocumentFormatSync
