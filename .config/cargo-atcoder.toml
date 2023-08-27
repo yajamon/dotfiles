@@ -95,7 +95,12 @@ fn main() {
         a: [usize; n],
     }
 
-    let ans = 0usize;
+    let mut sum = 0usize;
+    for i in 0..n {
+        sum += a[i];
+    }
+
+    let ans = sum;
     println!("{}", ans);
 }
 """
