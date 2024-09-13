@@ -45,8 +45,14 @@ if &compatible
     set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath+=$HOME/.vim/bundles/repos/github.com/Shougo/dein.vim
+" Set Dein base path (required)
+let s:dein_base = '~/.vim/bundles'
+
+" Set Dein source path (required)
+let s:dein_src = '~/.vim/bundles/repos/github.com/Shougo/dein.vim'
+
+" Set Dein runtime path (required)
+execute 'set runtimepath+=' . s:dein_src
 
 " Required:
 if dein#load_state('~/.vim/bundles')
