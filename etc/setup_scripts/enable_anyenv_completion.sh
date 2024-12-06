@@ -3,8 +3,8 @@ if [ -e $HOME/.anyenv ]; then
         source $HOME/.anyenv/completions/anyenv.zsh
     fi
 
-    for p in $(ls $HOME/.anyenv/envs/*/completions/*.zsh)
+    for env in $(ls $HOME/.anyenv/envs/)
     do
-        source $p
+        source $HOME/.anyenv/envs/$env/completions/"_$env"
     done
 fi
