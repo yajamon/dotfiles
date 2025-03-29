@@ -86,16 +86,21 @@ rustc_version = "1.70.0"
 
 # source code template
 template = """
-use proconio::{input, fastout};
+use proconio::{fastout, input};
+
+const _INF: usize = 1_100_100_100;
+const _TEN_9: usize = 1_000_000_000;
+const _TEN_6: usize = 1_000_000;
+const _TEN_5: usize = 100_000;
 
 #[fastout]
 fn main() {
     input! {
         n: usize,
-        a: [usize; n],
+        a: [u128; n],
     }
 
-    let mut sum = 0usize;
+    let mut sum = 0;
     for i in 0..n {
         sum += a[i];
     }
