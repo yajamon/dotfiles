@@ -39,6 +39,7 @@
 	ui = true
 [diff]
 	indentHeuristic = true
+	algorithm = histogram
 [init]
 	# この指定の理由はコミットメッセージに書いてある git blame でもして
 	defaultBranch = master
