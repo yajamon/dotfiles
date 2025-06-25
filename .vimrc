@@ -40,27 +40,44 @@ set backspace=indent,eol,start
 " 内容が変更されたら自動的に再読み込み
 set autoread
 
+"dein installer
+let $CACHE = expand('~/.cache')
+if !($CACHE->isdirectory())
+  call mkdir($CACHE, 'p')
+endif
+if &runtimepath !~# '/dein.vim'
+  let s:dir = 'dein.vim'->fnamemodify(':p')
+  if !(s:dir->isdirectory())
+    let s:dir = $CACHE .. '/dein/repos/github.com/Shougo/dein.vim'
+    if !(s:dir->isdirectory())
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dir
+    endif
+  endif
+  execute 'set runtimepath^='
+        \ .. s:dir->fnamemodify(':p')->substitute('[/\\]$', '', '')
+endif
+
 "dein Scripts-----------------------------
 if &compatible
     set nocompatible               " Be iMproved
 endif
 
 " Set Dein base path (required)
-let s:dein_base = '~/.vim/bundles'
+let s:dein_base = '~/.cache/dein'
 
 " Set Dein source path (required)
-let s:dein_src = '~/.vim/bundles/repos/github.com/Shougo/dein.vim'
+let s:dein_src = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
 
 " Set Dein runtime path (required)
 execute 'set runtimepath+=' . s:dein_src
 
 " Required:
-if dein#load_state('~/.vim/bundles')
-    call dein#begin('~/.vim/bundles')
+if dein#load_state(s:dein_base)
+    call dein#begin(s:dein_base)
 
     " Let dein manage dein
     " Required:
-    call dein#add('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
+    call dein#add(s:dein_src)
 
     " Add or remove your plugins here:
     call dein#add('Shougo/ddc.vim')
