@@ -108,6 +108,8 @@ if dein#load_state(s:dein_base)
     call dein#add('leafgarland/typescript-vim')
     call dein#add('editorconfig/editorconfig-vim')
 
+    call dein#add('github/copilot.vim')
+
     " You can specify revision/branch/tag.
     " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
