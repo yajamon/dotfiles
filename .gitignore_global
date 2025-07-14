@@ -1,6 +1,10 @@
 ,
 .env
 
+# CLAUDE
+CLAUDE.local.md
+.claude/settings.local.json
+
 # Created by https://www.gitignore.io/api/windows,macos,linux,vim,xcode,visualstudiocode,direnv
 # Edit at https://www.gitignore.io/?templates=windows,macos,linux,vim,xcode,visualstudiocode,direnv
 
