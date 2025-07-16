@@ -13,6 +13,3 @@ if [ ! -e /usr/local/bin/zsh ]; then
     chsh -s /usr/local/bin/zsh
 fi
 
-bash $INIT_SCRIPTS/anyenv.sh
-bash $INIT_SCRIPTS/rbenv.sh
-
