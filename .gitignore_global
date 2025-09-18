@@ -1,5 +1,6 @@
 ,
 .env
+mise.local.toml
 
 # CLAUDE
 CLAUDE.local.md
